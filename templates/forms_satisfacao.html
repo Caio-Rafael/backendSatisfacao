@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Satisfaction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            color: #555;
+        }
+        input, select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            height: 40px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            height: 50px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de satisfação do cliente</h1>
+        <form action="/predict" method="post">
+            <label for="Customer Type_Encoded">Tipo de cliente</label>
+            <select id="Customer Type_Encoded" name="Customer Type_Encoded">
+                <option value="0">Leal</option>
+                <option value="1">Disleal</option>
+            </select>
+            
+            <label for="Age">Idade</label>
+            <input type="number" id="Age" name="Age" class="numeric-field">
+            
+            <label for="Type of Travel_Encoded">Tipo de viagem</label>
+            <select id="Type of Travel_Encoded" name="Type of Travel_Encoded">
+                <option value="0">Trabalho</option>
+                <option value="1">Pessoal</option>
+            </select>
+            
+            <label for="Class_Encoded">Classe</label>
+            <select id="Class_Encoded" name="Class_Encoded">
+                <option value="0">Economica</option>
+                <option value="1">Econimica +</option>
+                <option value="2">Executiva</option>
+            </select>
+            
+            <label for="Flight Distance">Distancia do voo (km)</label>
+            <input type="number" id="Flight Distance" name="Flight Distance" class="numeric-field">
+            
+            <label for="Seat comfort">Conforto do asento</label>
+            <select id="Seat comfort" name="Seat comfort" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Departure/Arrival time convenient">Conveniencia do horário de chegada/Saída</label>
+            <select id="Departure/Arrival time convenient" name="Departure/Arrival time convenient" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Food and drink">Comidas e bebidas</label>
+            <select id="Food and drink" name="Food and drink" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Gate location">Localização do portão</label>
+            <select id="Gate location" name="Gate location" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Inflight wifi service">Internet do voo</label>
+            <select id="Inflight wifi service" name="Inflight wifi service" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Inflight entertainment">Entretenimeto do voo</label>
+            <select id="Inflight entertainment" name="Inflight entertainment" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Online support">Suporte online</label>
+            <select id="Online support" name="Online support" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Ease of Online booking">Facilidade do agendamento de passagem online</label>
+            <select id="Ease of Online booking" name="Ease of Online booking" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="On-board service">Serviços a bordo</label>
+            <select id="On-board service" name="On-board service" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Leg room service">Espaço para as pernas</label>
+            <select id="Leg room service" name="Leg room service" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Baggage handling">Manuseio das bagagens</label>
+            <select id="Baggage handling" name="Baggage handling" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Checkin service">Serviço de check-in</label>
+            <select id="Checkin service" name="Checkin service" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Cleanliness">Limpeza</label>
+            <select id="Cleanliness" name="Cleanliness" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Online boarding">Embarque online</label>
+            <select id="Online boarding" name="Online boarding" class="dropdown-field">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <label for="Departure Delay in Minutes">Atraso de saída em minutos</label>
+            <input type="number" id="Departure Delay in Minutes" name="Departure Delay in Minutes" class="numeric-field">
+            
+            <label for="Arrival Delay in Minutes">Atraso de chegada em minutos</label>
+            <input type="number" id="Arrival Delay in Minutes" name="Arrival Delay in Minutes" class="numeric-field">
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
