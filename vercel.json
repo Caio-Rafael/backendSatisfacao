@@ -1,9 +1,9 @@
 {
-    "version": 2,
-    "builds": [
-        {"source": "app.py", "use": "@vercel/python"}
-    ],
-    "routes": [
-        {"source": "/(.*)", "dest": "app.py"}
+
+    "rewrites": [
+
+        { "source": "/(.*)", "destination": "/api/app" }
+
     ]
+
 }
