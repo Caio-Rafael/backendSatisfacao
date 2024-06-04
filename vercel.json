@@ -1,17 +1,4 @@
 {
-    "rewrites": [{"dest": "/"}],
-    "version": 2,
-    "builds": [
-      {
-        "src": "api/app.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/",
-        "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-      }
-    ]
+    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+
   }
