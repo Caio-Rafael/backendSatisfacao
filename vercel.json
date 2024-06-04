@@ -1,5 +1,5 @@
 {
-    "rewrites": [{ "src": "/(.*)", "dest": "/"}],
+    "rewrites": [{"dest": "/"}],
     "version": 2,
     "builds": [
       {
